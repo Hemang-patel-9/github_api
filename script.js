@@ -1,6 +1,6 @@
 let avatar = document.getElementById("gavatar");
 let gname = document.getElementById("gname");
-let email = document.getElementById("gemail");
+let follower = document.getElementById("gfollow");
 let locate = document.getElementById("glocation");
 let create = document.getElementById("gcreate");
 let profile = document.getElementById("gprofile");
@@ -28,11 +28,11 @@ document.getElementById("inputval").addEventListener("keyup", async () => {
 	else {
 		gname = data.name;
 	}
-	if (data.email == null) {
-		email = "Not Specified Yet";
+	if (data.followers == null) {
+		follower = "0";
 	}
 	else {
-		email = data.email;
+		follower = data.followers;
 	}
 	if (data.location == null) {
 		locate = "Not Specified Yet";
@@ -68,10 +68,10 @@ document.getElementById("inputval").addEventListener("keyup", async () => {
 
 	document.getElementById("gavatar").src = avatar;
 	document.getElementById("gname").innerHTML = gname;
-	document.getElementById("gemail").innerHTML = email;
+	document.getElementById("gfollow").innerHTML = follower;
 	document.getElementById("glocation").innerHTML = locate;
 	document.getElementById("gcreate").innerHTML = create;
 	document.getElementById("gprofile").innerHTML = profile;
 	document.getElementById("gtotalrepo").innerHTML = repo;
-	document.getElementById("gurl").innerHTML = url;
+	document.getElementById("gurl").innerHTML = `<a href="${url}" target="_blank">${url}</a>`;
 });
